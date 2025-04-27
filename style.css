@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #e9a190, #f7d4c8, #e9a190);/* Soft elegant rose gold */
+    font-family: 'Lora', serif;
+    color: #7a4e48; /* Deep rose gold for text */
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 8px solid #D4AF37; /* Classic gold */
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  header {
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #D4AF37; /* Rich gold */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(212, 175, 127, 0.8);
+  }
+  
+  
+  .subtitle {
+    font-family: 'dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #b07a61; /* Rich rose brown */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .wishes-slideshow {
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+  }
+  
+  .wish {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    background: rgba(255, 250, 240, 0.9); /* Soft ivory background */
+    padding: 25px 30px;
+    border: 2px solid #D4AF37; /* Gold border */
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(212, 175, 127, 0.3);
+    color: #b07a61; /* Deep gold text */
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
+    max-width: 700px;
+  }
+  
+  .wish.active {
+    opacity: 1;
+  }
+  
+  
+  .gallery {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+}
+  
+  .gallery img {
+    width: 300px; /* or any size you like */
+  height: 400px; /* keeps height uniform */
+  object-fit: cover; /* important! */
+  border: 4px solid #D4AF37; /* gold border */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(212, 175, 127, 0.5);
+}
+  
+  footer {
+    margin-top: 60px;
+    font-style: italic;
+    color: #b07a61;
+    font-size: 1.2rem;
+  }
+  
+  /* Soft animations */
+  header, .wishes p, .gallery img, footer {
+    animation: fadeIn 2s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Confetti canvas */
+  #confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  #playMusicButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #b07a61; /* gold button */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(212, 175, 127, 0.5);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  #playMusicButton:hover {
+    background: #D4AF37; /* darker gold on hover */
+  }
+  

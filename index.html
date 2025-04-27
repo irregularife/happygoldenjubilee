@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy 50th Birthday, Mum!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Happy 50th Birthday, Mum!</h1>
+      <p class="subtitle">A Golden Celebration of a Golden Heart</p>
+    </header>
+
+    <div class="wishes-slideshow">
+        <div class="wish active"> ✨Fifty years of love, wisdom, and endless beauty — today we celebrate you!✨</div>
+            <div class="wish">✨Fifty looks incredible on you — graceful, radiant, and strong. Here's to many more years!✨</div>
+            <div class="wish">✨May this new chapter bring you joy, laughter, and love beyond measure. Happy Golden Jubilee!✨</div>
+            <div class="wish">✨Cheers to 50 golden years of grace, strength, and laughter. We love you beyond words.✨</div>
+            <div class="wish">✨May your 50th be as fabulous, radiant, and inspiring as you are.✨</div>
+          </div>
+      
+      
+
+    <section class="gallery">
+      <img src="mum1.jpg" alt="Mum Photo 1">
+      <img src="mum2.jpg" alt="Mum Photo 2">
+    </section>
+<!-- Audio -->
+<audio id="birthdaySong" loop>
+    <source src="your-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <!-- Floating Play Button -->
+  <button id="playMusicButton">🎵 Play Music</button>
+  
+    <footer>
+      <p>With love, forever and always - Ifeoluwa</p>
+    </footer>
+  </div>
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Setup
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    confettiCanvas.width = window.innerWidth;
+    confettiCanvas.height = window.innerHeight;
+  
+    const confetti = confettiCanvas.getContext('2d');
+  
+    function launchConfetti() {
+      window.confetti({
+        particleCount: 3,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#d4af37', '#fff8dc', '#f7e7ce'],
+      });
+    }
+  
+    // Soft continuous confetti
+    setInterval(() => {
+      window.confetti({
+        particleCount: 2,
+        angle: 90,
+        spread: 55,
+        startVelocity: 30,
+        origin: { x: Math.random(), y: 0 },
+        colors: ['#d4af7f', '#D4AF37', '#c0c0c0']
+,
+      });
+    }, 500);
+  
+    // Interactive click burst
+    window.addEventListener('click', launchConfetti);
+    window.addEventListener('touchstart', launchConfetti);
+  
+    // Resize canvas on window resize
+    window.addEventListener('resize', () => {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    });
+  </script>
+  <script>
+    let currentWish = 0;
+    const wishes = document.querySelectorAll('.wish');
+    const totalWishes = wishes.length;
+    
+    function showNextWish() {
+      wishes[currentWish].classList.remove('active');
+      currentWish = (currentWish + 1) % totalWishes;
+      wishes[currentWish].classList.add('active');
+    }
+    
+    setInterval(showNextWish, 6000); // Change wish every 4 seconds
+    </script>
+    <script>
+        const birthdaySong = document.getElementById('birthdaySong');
+        const playMusicButton = document.getElementById('playMusicButton');
+        
+        playMusicButton.addEventListener('click', function() {
+          birthdaySong.play();
+          playMusicButton.style.display = 'none'; // Hide button after playing
+        });
+        </script>
+        
+</body>
+</html>
